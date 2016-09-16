@@ -1,3 +1,11 @@
+/* There's a bit too much unnecessary relative positioning in this.
+You should pretty much never have to use relative positioning like that. With
+relative in particular it can cause weird problems because the element that you're
+positioning that way still takes up space at its original spot in the dom. If
+you have a situation where you need something on top of something else use absolute.
+If what you really need is just to move something around on the page, set the display
+such that you can manipulate it like you want and then use margin/padding.*/
+
 @font-face {
   font-family: 'EraserRegular';
   src: url('fonts/EraserRegular.ttf');
@@ -12,7 +20,7 @@
   font-family: 'DJB_Chalk_It_Up';
   src: url('fonts/DJB_Chalk_It_Up.ttf');
 }
-
+/* Try to avoid leaving commented out code in final submissions */
 /** {
   outline: 1px red dashed;
 }*/
@@ -93,9 +101,17 @@ nav.navfooter {
   width: 160px;
   height: 40px;
   margin: 0 10px;
+  /* As mentioned below the relative positioning could have been taken
+  out with something like this:
+  width: 148px;
+  height: 22px;
+  padding: 9px 6px;
+  */
 }
 
 a.navlink {
+  /* avoid relative positioning in situations like this
+  use padding on the container*/
   position: relative;
   font-size: 24px;
   font-family: 'Suez One', serif;
@@ -131,6 +147,7 @@ a:visited {
   font-size: 20px;
   color: black;
 }
+
 .hint img{
   position: relative;
   left: 48%;
