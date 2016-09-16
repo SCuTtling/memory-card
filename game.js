@@ -1,5 +1,9 @@
 'use strict';
 
+//notice that all of these files start out with very similar paths.
+//you could save multiple lines by writing a function to concatenate these
+//paths rather than hard coding them.
+
 //arrays to hold data
 var animalsArray = ['imgs/animals/alligator.jpg', 'imgs/animals/bear.png', 'imgs/animals/cat.jpg', 'imgs/animals/chicken.jpg', 'imgs/animals/cow.jpg', 'imgs/animals/deer.jpg', 'imgs/animals/dog.jpg', 'imgs/animals/eagle.jpg', 'imgs/animals/elephant.jpg', 'imgs/animals/flamingo.jpg', 'imgs/animals/giraffe.jpg', 'imgs/animals/gorilla.jpg', 'imgs/animals/hippo.jpg', 'imgs/animals/horse.jpg', 'imgs/animals/lion.jpg', 'imgs/animals/lizard.jpg', 'imgs/animals/mouse.jpg', 'imgs/animals/parrot.jpg', 'imgs/animals/pig.jpg', 'imgs/animals/sheep.jpg', 'imgs/animals/sloth.jpg', 'imgs/animals/snake.jpg', 'imgs/animals/tiger.jpg', 'imgs/animals/turtle.jpg'];
 
@@ -47,6 +51,7 @@ function getGameParam(){
   key1 = level.cardset;
 };
 
+//nice!
 function shuffleArray(array){
   for (var i = array.length - 1; i > 0; i--){
     var j = Math.floor(Math.random() * (i + 1));
@@ -132,6 +137,9 @@ function updatePlayerInfo(countTotal) {
 };
 
 function buildTable(imageArray){
+  //what is iA!?  I know sometimes it get's to be a bit of a hurry when you're
+  //getting things to work but try to slow yourself down and name your
+  //variables a little more semantically
   var iA = 0;
   var table = document.getElementById('game_table');
   var tRow;

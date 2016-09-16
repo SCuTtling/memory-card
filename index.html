@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" type="text/css">
   <title></title>
 </head>
+  <!--A few too many divs. Keep in mind that mains are effectively divs in the first place. So if you just had an inner container (tablebackground) you could have just applied the styling to the main directly instead of adding an unnecessary container. So far as I can tell the divs: 'form_background', 'form_inputs', 'submit_button', 'nav_list' and could all be done away with. Similarly the classes 'navtop', 'navlink', 'form_label', and 'navlist' could have been removed in favor of using the proper css selectors. It's common early on to have a few too many divs and a few too many classes but try to keep that in mind especially early on when you structure your html.-->
 <body>
 <header>
   <h1>SCuTtle Your Memory!</h1>
@@ -20,6 +21,7 @@
   </nav>
 </header>
 <main>
+
   <div class="tablebackground">
     <div class="instructions">
       <h2>Instructions</h2>

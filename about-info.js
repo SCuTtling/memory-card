@@ -5,12 +5,15 @@ var sortedHighScores;
 var arrayOfScores;
 var scoreStrings = ['high_score_easy','high_score_med','high_score_hard'];
 
+//this might not have needed to be a function. Since it's only used once
+//and it's a relatively simple operation.
 function getScores() {
   var arrayString;
   arrayString = localStorage.getItem('high_score_array');
   return JSON.parse(arrayString);
 };
-
+//this function is only used once and is effectively calling the sort method
+//on an array once. You could just call sort on the array below.
 function objectSort(array) {
   var sorted;
   sorted = array.sort(function(a, b) {
@@ -19,6 +22,7 @@ function objectSort(array) {
   return sorted;
 };
 
+//nice!
 function distributeObjects(objectArray) {
   var sortedHighScoresEasy = [];
   var sortedHighScoresMed = [];
@@ -55,6 +59,10 @@ function populateScores(arrayOfScores, arrayOfScoreStrings) {
 //main
 
 highScores = getScores();
+//(continued from above) for instance:
+//sortedHighScores = highScores.sort(<sortfunction>)
+//or maybe even better, sort the array in the first line of the
+//function that puts them in various arrays
 sortedHighScores = objectSort(highScores);
 arrayOfScores = distributeObjects(sortedHighScores);
 populateScores(arrayOfScores, scoreStrings);
